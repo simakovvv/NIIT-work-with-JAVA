@@ -59,10 +59,8 @@ public class MovablePoint extends Point {
     public MovablePoint move(){
         super.setX(super.getX() + xSpeed);
         super.setY(super.getY() + ySpeed);
-        //*for(float i:this.speedXY) this.speedXY[(int) i] = 0;
+        for (int i = 0; i < speedXY.length; i++) this.speedXY[i] = 0;
 
-        speedXY[0]=0;
-        speedXY[1]=0;
 
         return this;
 
