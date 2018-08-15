@@ -63,9 +63,7 @@ public class Triangle  {
 
         }
 
-        if (maxLength == 0 | midLength == 0 | minLength == 0 ) {
-            return TriangleType.DOESNOTEXIST;
-        }
+
         switch (choise){
             case 1 : return TriangleType.RECTANGULAR;
             case 2 : return TriangleType.OUTSIDE;
@@ -88,6 +86,30 @@ public class Triangle  {
                 ", midLength=" + midLength +
                 ", maxLength=" + maxLength +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj){
+            return  true;
+        }
+
+        if(obj instanceof Triangle) return false;
+
+        Triangle triangle = (Triangle)obj;
+
+        return v1.equals(triangle.v1) && v2.equals(triangle.v2) && v3.equals(triangle.v3);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31*result + this.v1.hashCode();
+        result = 31*result + this.v2.hashCode();
+        result = 31*result + this.v3.hashCode();
+        return result;
+
     }
 }
 

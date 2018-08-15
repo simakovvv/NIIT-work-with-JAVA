@@ -1,10 +1,12 @@
 import java.util.Arrays;
 
 public class Book {
+
     private String name;
     private Author[] autors;
     private Double price;
     private int qty = 0;
+
 
     public void addNewAuthor(Author...authors){
 
@@ -93,4 +95,5 @@ public class Book {
         return names;
 
     }
+
 }

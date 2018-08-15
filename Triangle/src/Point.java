@@ -10,6 +10,9 @@ public class Point {
                 + Math.pow(anotherPoint.getY() - this.getY(),2));
     }
 
+    public double distance(){
+        return Math.sqrt(Math.pow(this.x,2)+ Math.pow(this.y,2));
+    }
 
     public int getX() {
         return x;
@@ -40,5 +43,27 @@ public class Point {
                 "x=" + x +
                 ", y=" + y +
                 '}';
+    }
+    public boolean equals(Object obj){
+        if(this == obj){
+            return true;
+        }
+
+        if(!(obj instanceof Point)){
+            return false;
+        }
+        Point point = (Point)obj;
+
+        return this.x == point.getX() && this.y == point.getY();
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result+ this.getX();
+        result = 31* result + this.getY();
+        return result;
+
+
     }
 }
